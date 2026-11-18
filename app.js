@@ -6,13 +6,13 @@
   var tk=false;function sc(){if(tk)return;tk=true;requestAnimationFrame(function(){top.classList.toggle('sc',window.pageYOffset>40);tk=false})}
   addEventListener('scroll',sc,{passive:true});
 
-  var links=[].slice.call(document.querySelectorAll('.menu a[href^="#"]:not(.btn)'));
+  var links=[].slice.call(document.querySelectorAll('.menu a[href*="#"]:not(.btn)')).filter(function(l){var u=new URL(l.href,location.href);if(u.pathname===location.pathname||(/\/index\.html$/.test(u.pathname)&&/\/$/.test(location.pathname))){l.dataset.h=u.hash;return true}return false});
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
-    links.forEach(function(l){var t=document.querySelector(l.getAttribute('href'));if(t)io.observe(t)});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.dataset.h==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+    links.forEach(function(l){var t=document.querySelector(l.dataset.h);if(t)io.observe(t)});
     var st=document.getElementById('start');if(st)io.observe(st);
     var mob=document.getElementById('mob');
-    if(mob)new IntersectionObserver(function(es){mob.classList.toggle('widac',!es[0].isIntersecting&&es[0].boundingClientRect.top<0)},{threshold:0}).observe(document.querySelector('.hero .btn'));
+    if(mob&&document.querySelector('.hero .btn'))new IntersectionObserver(function(es){mob.classList.toggle('widac',!es[0].isIntersecting&&es[0].boundingClientRect.top<0)},{threshold:0}).observe(document.querySelector('.hero .btn'));
     var m=document.getElementById('mapa');
     if(m){var mo=new IntersectionObserver(function(es){if(es[0].isIntersecting){var f=document.createElement('iframe');f.src=m.dataset.src;f.title=m.dataset.t||'Mapa';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';m.appendChild(f);mo.disconnect()}},{rootMargin:'300px'});mo.observe(m)}
   }

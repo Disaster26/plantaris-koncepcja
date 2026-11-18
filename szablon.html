@@ -4,31 +4,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>Podolog Tychy i wkładki ortopedyczne - Plantaris, diagnostyka i terapia stóp</title>
-<meta name="description" content="Gabinet podologiczny Plantaris w Tychach i w Woli: wrastające paznokcie, odciski, brodawki, stopa cukrzycowa, komputerowe badanie stóp i indywidualne wkładki ortopedyczne.">
-<meta name="theme-color" content="#3E5937">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<meta name="theme-color" content="#17466E">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/jost-rdzen.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-rdzen.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-pl.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-pl.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" fetchpriority="high" href="img/hero-m-480.webp" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-760.webp 760w" imagesizes="100vw" media="(max-width:760px)">
-<link rel="preload" as="image" fetchpriority="high" href="img/hero-1600.webp" imagesrcset="img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w, img/hero-2560.webp 2560w" imagesizes="68vw" media="(min-width:761px)">
+{{PRELOAD}}
 <style>
 @font-face{font-family:Jost;font-weight:300 700;font-display:swap;src:url(fonts/jost-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2026,U+20AC}
 @font-face{font-family:Jost;font-weight:300 700;font-display:swap;src:url(fonts/jost-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
 @font-face{font-family:Inter;font-weight:400 700;font-display:swap;src:url(fonts/inter-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013-2014,U+2018-2019,U+201C-201E,U+2022,U+2026,U+20AC}
 @font-face{font-family:Inter;font-weight:400 700;font-display:swap;src:url(fonts/inter-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
 :root{
-  --zielen:#3E5937;      /* pierwszy ekran, z zieleni logo #688060 przyciemnionej */
-  --zielen-logo:#688060; /* liscie logo */
-  --las:#1D2B1A;         /* tekst naglowkow, stopka */
+  --zielen:#17466E;      /* pierwszy ekran - glęboki błękit (wersja niebieska do czasu palety klientki) */
+  --zielen-logo:#2C7DB5; /* znak lisci w akcentach - blekit */
+  --blekit-j:#4FA3D9;
+  --las:#0C2740;         /* granat: naglowki, stopka */
   --bordo:#9A0F1C;       /* srodkowy lisc logo */
   --bordo-h:#7E0B16;
-  --szary:#EEF1F0;
-  --linia:#D5DBD7;
-  --tekst:#232A25;
-  --tekst2:#4C5650;
+  --szary:#EEF3F7;
+  --linia:#D2DDE6;
+  --tekst:#1D2833;
+  --tekst2:#465464;
   --lisc:26px 4px 26px 4px; /* ksztalt liscia z logo */
   --gut:clamp(16px,4vw,64px);
   --wrap:min(100% - 2*var(--gut), 1680px);
@@ -47,11 +47,12 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:var(--lisc);background:var(--bordo);color:#fff;font:600 16px/1 Inter,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background .2s}
 .btn:hover{background:var(--bordo-h)}
 .btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #E9B44C;outline-offset:3px}
+[hidden]{display:none!important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* naglowek */
 .top{position:sticky;top:0;z-index:50;background:#fff;transition:box-shadow .2s}
-.top.sc{box-shadow:0 1px 0 var(--linia),0 6px 24px rgba(29,43,26,.06)}
+.top.sc{box-shadow:0 1px 0 var(--linia),0 6px 24px rgba(12,39,64,.07)}
 .top .wrap{height:var(--hdr);display:flex;align-items:center;gap:24px}
 .logo{display:block;flex:none}
 .logo img{width:176px;height:auto}
@@ -71,11 +72,11 @@ p{margin:0}
 .hero-foto img{width:100%;height:100%;object-fit:cover;object-position:30% 50%;-webkit-mask-image:linear-gradient(90deg,#000 62%,rgba(0,0,0,.6) 80%,transparent 100%);mask-image:linear-gradient(90deg,#000 62%,rgba(0,0,0,.6) 80%,transparent 100%)}
 .hero-in{width:min(42%,640px);margin-right:max(var(--gut),calc((100vw - 1680px)/2));padding:56px 0 64px}
 .hero h1{color:#fff;font-size:clamp(34px,3.5vw,60px);font-weight:500;letter-spacing:-.015em;line-height:1.08}
-.hero .lead{margin-top:22px;font-size:clamp(17px,1.25vw,20px);line-height:1.55;color:#E6ECE3;max-width:34em}
+.hero .lead{margin-top:22px;font-size:clamp(17px,1.25vw,20px);line-height:1.55;color:#E2ECF5;max-width:34em}
 .hero .akcje{margin-top:32px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px}
 .hero .akcje .tel{color:#fff;font-weight:600;font-size:18px;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
-.hero .akcje .tel small{display:block;font-weight:400;font-size:13px;color:#CBD6C6}
-.hero .gab{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22);font-size:14.5px;color:#D5DED1;display:flex;flex-wrap:wrap;gap:4px 22px}
+.hero .akcje .tel small{display:block;font-weight:400;font-size:13px;color:#C2D5E6}
+.hero .gab{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22);font-size:14.5px;color:#CEDCEA;display:flex;flex-wrap:wrap;gap:4px 22px}
 .hero-izo{position:absolute;right:-60px;bottom:-90px;width:300px;height:auto;z-index:-1;opacity:.16;color:#fff}
 
 /* znak stopy - izolinie nacisku z pedobarografu */
@@ -183,12 +184,12 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--zielen)}
 .zgoda{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:13.5px;color:var(--tekst2)}
 .zgoda input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--zielen)}
 form .btn{justify-self:start}
-#msg{grid-column:1/-1;background:#E7F0E3;color:var(--las);padding:12px 14px;border-radius:10px;font-size:15px}
-.mapa{margin-top:clamp(40px,5vw,64px);height:380px;border-radius:var(--lisc);overflow:hidden;background:#dfe5e1}
+#msg{grid-column:1/-1;background:#E3EEF7;color:var(--las);padding:12px 14px;border-radius:10px;font-size:15px}
+.mapa{margin-top:clamp(40px,5vw,64px);height:380px;border-radius:var(--lisc);overflow:hidden;background:#DDE6EE}
 .mapa iframe{width:100%;height:100%;border:0;display:block}
 
 /* stopka */
-.stopka{background:var(--las);color:#C9D2C6;padding:56px 0 28px;font-size:15px}
+.stopka{background:var(--las);color:#C3D2E0;padding:56px 0 28px;font-size:15px}
 .stopka .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:32px}
 .stopka h4{margin:0 0 12px;color:#fff;font:500 17px/1.3 Jost,sans-serif}
 .stopka p,.stopka li{margin:0 0 6px}
@@ -199,11 +200,175 @@ form .btn{justify-self:start}
 .stopka .marka .lisc{width:34px;height:40px;background:#fff}
 .stopka .dol{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.14);padding-top:22px;margin-top:14px;font-size:14px}
 {{BADGE_STYLE}}
+/* koszyk w naglowku */
+.kosz{position:relative;display:grid;place-items:center;width:46px;height:46px;color:var(--las);flex:none;border-radius:var(--lisc)}
+.kosz:hover{color:var(--bordo)}
+.kosz svg{width:26px;height:26px}
+.kosz .ile{position:absolute;top:3px;right:1px;min-width:19px;height:19px;padding:0 5px;border-radius:10px;background:var(--bordo);color:#fff;font:700 11.5px/19px Inter,sans-serif;text-align:center}
+.kosz .ile[hidden]{display:none}
+@media (min-width:1025px){.menu{order:1}.kosz{order:2;margin-left:4px}}
+
+/* naglowek podstrony - zdjecie na spad */
+.pod{position:relative;min-height:min(64svh,640px);display:flex;align-items:flex-end;color:#fff;background:var(--zielen);overflow:hidden;isolation:isolate}
+.pod.niski{min-height:min(46svh,460px)}
+.pod-foto{position:absolute;inset:0;z-index:-2}
+.pod-foto img{width:100%;height:100%;object-fit:cover}
+.pod::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,39,64,.92) 0%,rgba(23,70,110,.78) 38%,rgba(23,70,110,.18) 72%,rgba(23,70,110,0) 100%)}
+.pod-in{width:var(--wrap);margin-inline:auto;padding:64px 0 56px}
+.pod-in>*{max-width:640px}
+.pod h1{color:#fff;font-size:clamp(32px,3.4vw,56px);line-height:1.08;letter-spacing:-.015em}
+.pod .lead{margin-top:18px;font-size:clamp(16px,1.2vw,19px);color:#E2ECF5;line-height:1.55}
+.pod .akcje{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px}
+.okruszki{font-size:14px;color:#C2D5E6;margin-bottom:16px}
+.okruszki a{text-decoration:none}.okruszki a:hover{color:#fff}
+
+/* cennik - pelna lista */
+.cennik{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;border-top:1px solid var(--linia);align-items:start}
+.cennik details{border-bottom:1px solid var(--linia)}
+.cennik summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font:500 20px/1.3 Jost,sans-serif;color:var(--las)}
+.cennik summary::-webkit-details-marker{display:none}
+.cennik summary::after{content:"";width:12px;height:12px;flex:none;border-right:2px solid var(--bordo);border-bottom:2px solid var(--bordo);transform:rotate(45deg) translate(-3px,-3px);transition:transform .2s}
+.cennik details[open] summary::after{transform:rotate(-135deg)}
+.cennik summary small{display:block;font:400 14px/1.4 Inter,sans-serif;color:var(--tekst2);margin-top:2px}
+.cennik dl{margin:0 0 18px}
+.cennik dl div{display:flex;justify-content:space-between;gap:18px;padding:10px 0;border-top:1px dashed var(--linia);font-size:15.5px}
+.cennik dt{color:var(--tekst)}
+.cennik dd{margin:0;font:600 17px/1.35 Jost,sans-serif;color:var(--las);white-space:nowrap;text-align:right}
+.cennik .bez{color:var(--tekst2);font-size:14.5px;margin:0 0 18px}
+.cennik-uw{margin-top:18px;font-size:14px;color:var(--tekst2)}
+
+/* blok szkolenia i sklep na glownej */
+.edu{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,88px);align-items:center}
+.edu-fot{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.62fr);gap:14px;align-items:end}
+.edu-fot .a{border-radius:var(--lisc);overflow:hidden}
+.edu-fot .b{border-radius:4px 26px 4px 26px;overflow:hidden}
+.edu-fot img{width:100%;height:100%;object-fit:cover}
+.edu-fot .a img{aspect-ratio:3/2.2}
+.edu-fot .b img{aspect-ratio:3/4}
+.edu-txt h2{margin-bottom:20px}
+.edu-txt>p{color:var(--tekst2);font-size:17.5px}
+.edu-dwa{margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.edu-dwa a{display:block;text-decoration:none;padding:20px 22px;border-radius:var(--lisc);background:#fff;border:1.5px solid var(--linia);transition:border-color .2s}
+.edu-dwa a:hover{border-color:var(--zielen-logo)}
+.edu-dwa b{display:block;font:500 21px/1.25 Jost,sans-serif;color:var(--las)}
+.edu-dwa span{display:block;margin-top:6px;font-size:14.5px;color:var(--tekst2)}
+.edu-dwa em{display:inline-block;margin-top:12px;font-style:normal;font-weight:600;color:var(--bordo);font-size:15px}
+
+.sek.ciemna{background:var(--las);color:#DCE6F0}
+.sek.ciemna h2{color:#fff}.sek.ciemna .edu-txt>p{color:#C9D7E5}
+.sek.ciemna .edu-dwa a{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.2)}
+.sek.ciemna .edu-dwa a:hover{border-color:var(--blekit-j)}
+.sek.ciemna .edu-dwa b{color:#fff}.sek.ciemna .edu-dwa span{color:#C9D7E5}.sek.ciemna .edu-dwa em{color:var(--blekit-j)}
+.edu-fot button{border:0;padding:0;background:none;cursor:zoom-in}
+/* szkolenia */
+.szk-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,88px);align-items:center}
+.szk-intro .fot{border-radius:4px 26px 4px 26px;overflow:hidden}
+.szk-intro .fot img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.szk-intro h2{margin-bottom:20px}
+.szk-intro p{color:var(--tekst2);font-size:17px;margin-top:14px}
+.szk-intro h2+p{margin-top:0}
+.tryb{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.tryb button{min-height:44px;padding:0 18px;border-radius:var(--lisc);border:1.5px solid var(--linia);background:#fff;color:var(--las);font:600 15px/1 Inter,sans-serif;cursor:pointer}
+.tryb button[aria-pressed=true]{background:var(--las);border-color:var(--las);color:#fff}
+.szk-lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.szk{background:#fff;border-radius:var(--lisc);padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;border:1.5px solid var(--linia)}
+.szk[hidden]{display:none}
+.szk .typ{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:14px;color:var(--tekst2);margin-bottom:12px}
+.szk .typ b{color:var(--zielen-logo);font-weight:600}
+.szk h3{font-size:clamp(21px,1.6vw,26px)}
+.szk details{margin-top:16px;border-top:1px solid var(--linia)}
+.szk summary{cursor:pointer;padding:14px 0 6px;font-weight:600;color:var(--las);list-style:none;display:flex;justify-content:space-between;align-items:center}
+.szk summary::-webkit-details-marker{display:none}
+.szk summary::after{content:"";width:10px;height:10px;border-right:2px solid var(--bordo);border-bottom:2px solid var(--bordo);transform:rotate(45deg);transition:transform .2s}
+.szk details[open] summary::after{transform:rotate(-135deg)}
+.szk ol{margin:8px 0 0;padding-left:22px;color:var(--tekst2);font-size:15px}
+.szk ol li{margin:5px 0}
+.szk .stan{padding-top:18px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between}
+.szk .stan p{font-size:14.5px;color:var(--tekst2)}
+.szk .stan .btn{min-height:46px;padding:0 20px}
+.szk.wyr{grid-column:1/-1;background:var(--las);border-color:var(--las);color:#DCE6F0}
+.szk.wyr h3{color:#fff}.szk.wyr .typ{color:#B9CCDE}.szk.wyr .typ b{color:var(--blekit-j)}
+.szk.wyr summary{color:#fff}.szk.wyr details{border-color:rgba(255,255,255,.18)}.szk.wyr ol,.szk.wyr .stan p{color:#C9D7E5}
+.szk.wyr .opis{margin-top:12px;color:#DCE6F0;max-width:52em}
+.terminy{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.terminy span{padding:6px 12px;border-radius:14px 3px 14px 3px;border:1px solid rgba(255,255,255,.3);font-size:13.5px;color:#fff}
+.zapis{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.zapis>div>p{color:var(--tekst2);font-size:17px;margin-top:16px}
+.zapis .lista{margin-top:22px}
+
+/* sklep */
+.jak{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:j;margin:0;padding:0}
+.jak li{list-style:none;counter-increment:j;padding:22px 24px;background:var(--szary);border-radius:var(--lisc);display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;align-content:start}
+.jak li::before{content:counter(j);grid-row:1/3;width:40px;height:40px;border-radius:20px 4px 20px 4px;background:var(--las);color:#fff;font:500 20px/40px Jost,sans-serif;text-align:center}
+.jak b{font:500 19px/1.3 Jost,sans-serif;color:var(--las)}
+.jak span{font-size:15px;color:var(--tekst2)}
+.sklep{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:clamp(24px,3vw,48px);align-items:start}
+.prod-lista{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.prod{display:flex;flex-direction:column;background:#fff;border-radius:var(--lisc);border:1.5px solid var(--linia);overflow:hidden}
+.prod[hidden]{display:none}
+.okl{position:relative;aspect-ratio:4/3;background:var(--zielen);color:#fff;padding:20px 22px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
+.okl.g{background:var(--las)}.okl.b{background:#21679A}
+.okl svg{position:absolute;right:-14px;top:-30px;width:118px;height:auto;opacity:.24;z-index:-1;color:#fff}
+.okl .r{font-size:12.5px;font-weight:600;letter-spacing:.02em;color:#BFD6EA}
+.okl .t{margin-top:6px;font:500 21px/1.2 Jost,sans-serif}
+.okl .lisc{position:absolute;left:22px;top:20px;width:22px;height:27px;background:#fff}
+.prod-in{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.prod-in h3{font-size:19px}
+.prod-in p{margin-top:8px;font-size:14.5px;color:var(--tekst2)}
+.prod-in .dol{margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.prod-in .cena{font:600 22px/1 Jost,sans-serif;color:var(--las);white-space:nowrap}
+.prod-in .cena small{display:block;font:400 12px/1.3 Inter,sans-serif;color:var(--tekst2);margin-top:4px}
+.prod-in .btn{min-height:46px;padding:0 16px;font-size:15px;flex:1 1 100%;white-space:nowrap}
+.prod-in .btn.w{background:var(--las)}
+.kp{position:sticky;top:calc(var(--hdr) + 20px);background:var(--szary);border-radius:var(--lisc);padding:24px}
+.kp h2{font-size:28px}
+.kp-pusty{margin-top:14px;color:var(--tekst2);font-size:15px}
+.kp ul{list-style:none;margin:14px 0 0;padding:0}
+.kp li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--linia);font-size:15px}
+.kp li b{font-weight:600;color:var(--las)}
+.kp li .il{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--tekst2)}
+.kp li .il button{width:32px;height:32px;border-radius:8px;border:1px solid var(--linia);background:#fff;cursor:pointer;font:600 16px/1 Inter,sans-serif;color:var(--las)}
+.kp li .usun{border:0;background:none;color:var(--bordo);font-size:13.5px;cursor:pointer;padding:4px 0;justify-self:end;text-decoration:underline}
+.kp .suma{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 4px;font-weight:600;color:var(--las)}
+.kp .suma b{font:600 26px/1 Jost,sans-serif}
+.kp form{padding:0;background:none;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:16px}
+.kp form h3{font-size:20px;margin-top:6px}
+.kp label{font-size:14px}
+.kp input{padding:11px 12px}
+.kp .btn{width:100%}
+.kp .info{font-size:13.5px;color:var(--tekst2)}
+.ok-zam{margin-top:14px;background:#fff;border-radius:var(--lisc);padding:20px;border-left:4px solid var(--zielen-logo)}
+.ok-zam h3{font-size:21px}
+.ok-zam p{margin-top:8px;font-size:15px;color:var(--tekst2)}
+.ok-zam b{color:var(--las)}
+.uw-pokaz{margin-top:22px;font-size:14px;color:var(--tekst2);padding:14px 16px;border:1px dashed var(--linia);border-radius:12px}
+.kosz-m{display:none}
+
+@media (max-width:1240px){.prod-lista{grid-template-columns:repeat(2,minmax(0,1fr))}.sklep{grid-template-columns:minmax(0,1fr) 340px}}
+@media (max-width:1024px){
+  .edu,.szk-intro,.zapis{grid-template-columns:minmax(0,1fr)}
+  .cennik{grid-template-columns:minmax(0,1fr)}
+  .sklep{grid-template-columns:minmax(0,1fr)}
+  .kp{position:static}
+  .jak{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .pod,.pod.niski{min-height:auto}
+  .pod::before{background:linear-gradient(180deg,rgba(12,39,64,.2) 0%,rgba(12,39,64,.68) 42%,rgba(12,39,64,.95) 100%)}
+  .pod-in{padding:150px 0 30px}
+  .szk-lista{grid-template-columns:minmax(0,1fr)}
+  .edu-dwa{grid-template-columns:minmax(0,1fr)}
+  .prod-lista{grid-template-columns:minmax(0,1fr)}
+  .okl{aspect-ratio:16/8}
+  .kosz-m{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:41;min-height:52px;align-items:center;justify-content:space-between;padding:0 18px;border-radius:var(--lisc);background:var(--las);color:#fff;text-decoration:none;font-weight:600;box-shadow:0 8px 24px rgba(12,39,64,.25)}
+  .kosz-m[hidden]{display:none}
+}
+
 
 /* pasek telefonu po przewinieciu */
 .mob{display:none}
 
-.lb{position:fixed;inset:0;z-index:100;background:rgba(18,26,16,.95);display:none;align-items:center;justify-content:center;flex-direction:column;padding:56px 12px 20px}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(6,20,34,.95);display:none;align-items:center;justify-content:center;flex-direction:column;padding:56px 12px 20px}
 .lb.otw{display:flex}
 .lb img{max-width:min(96vw,1400px);max-height:80vh;width:auto;height:auto;object-fit:contain}
 .lb p{color:#e8eaed;margin-top:14px;text-align:center;font-size:.95rem}
@@ -221,6 +386,7 @@ form .btn{justify-self:start}
 @media (max-width:1024px){
   :root{--hdr:64px}
   .logo img{width:150px}
+  .tel-m{order:1}.kosz{order:2}.burger{order:3}
   .burger{display:grid;place-items:center;width:46px;height:46px;border:0;background:none;color:var(--las);cursor:pointer;margin-left:2px}
   .tel-m{display:grid;place-items:center;width:46px;height:46px;margin-left:auto;color:var(--las)}
   .burger svg,.tel-m svg{width:26px;height:26px}
@@ -286,258 +452,35 @@ form .btn{justify-self:start}
 
 <header class="top" id="top">
   <div class="wrap">
-    <a class="logo" href="#start" aria-label="Plantaris - diagnostyka i terapia stóp, początek strony"><img src="img/logo.png" width="400" height="120" alt="Plantaris - diagnostyka i terapia stóp"></a>
+    <a class="logo" href="index.html" aria-label="Plantaris - diagnostyka i terapia stóp, początek strony"><img src="img/logo.png" width="400" height="120" alt="Plantaris - diagnostyka i terapia stóp"></a>
     <a class="tel-m" href="tel:+48503100341" aria-label="Zadzwoń: 503 100 341"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M8.2 3.5l2.6 4.6-2 2.3c1.3 2.7 3.6 5 6.3 6.3l2.3-2 4.6 2.6-1 3.6c-.3.9-1.1 1.4-2 1.3C10.5 21.6 4.4 15.5 3.8 7.1c-.1-.9.4-1.7 1.3-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
     <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 8h18M4 13h18M4 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
     <nav class="menu" id="menu" aria-label="Menu główne">
-      <a href="#zabiegi">Zabiegi</a>
-      <a href="#badanie">Badanie stóp i wkładki</a>
-      <a href="#zespol">Specjaliści</a>
-      <a href="#wizyta">Pierwsza wizyta</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="index.html#zabiegi" data-s="zabiegi">Zabiegi i ceny</a>
+      <a href="index.html#badanie">Badanie stóp</a>
+      <a href="index.html#zespol">O nas</a>
+      <a href="szkolenia.html" data-s="szkolenia">Szkolenia</a>
+      <a href="sklep.html" data-s="sklep">Sklep</a>
+      <a href="index.html#kontakt">Kontakt</a>
       <a class="tel" href="tel:+48503100341">503 100 341</a>
-      <a class="btn" href="#kontakt">Umów wizytę</a>
+      <a class="btn" href="index.html#kontakt">Umów wizytę</a>
     </nav>
+    <a class="kosz" href="sklep.html#koszyk" aria-label="Koszyk"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 9.5h16l-1.3 11.2c-.1.8-.8 1.3-1.6 1.3H7.9c-.8 0-1.5-.5-1.6-1.3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 9.5V8a3.5 3.5 0 0 1 7 0v1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span class="ile" data-ile hidden>0</span></a>
   </div>
 </header>
 
 <main>
-<section class="hero" id="start">
-  <picture class="hero-foto">
-    <source media="(max-width:760px)" srcset="img/hero-m-480.webp 480w, img/hero-m-760.webp 760w" sizes="100vw">
-    <img src="img/hero-1600.webp" srcset="img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w, img/hero-2560.webp 2560w" sizes="68vw" width="2560" height="1708" fetchpriority="high" alt="Podolog w gabinecie Plantaris przygotowuje narzędzie do zakładania klamry na wrastający paznokieć">
-  </picture>
-  <div class="hero-in">
-    <h1>Podolog i wkładki ortopedyczne w Tychach&nbsp;- leczymy stopy, patrząc na&nbsp;cały krok</h1>
-    <p class="lead">Wrastające paznokcie, odciski, brodawki, stopa cukrzycowa, komputerowe badanie stóp i wkładki projektowane indywidualnie. Gabinety w Tychach i w Woli.</p>
-    <div class="akcje">
-      <a class="btn" href="#kontakt">Umów wizytę</a>
-      <a class="tel" href="tel:+48503100341"><span>503 100 341<small>podologia i leczenie ran</small></span></a>
-    </div>
-    <p class="gab"><span>Tychy, ul. Zapolskiej 65B</span><span>Wola, ul. Lipowa 7a</span></p>
-  </div>
-  <svg class="hero-izo" viewBox="0 0 100 240" aria-hidden="true"><use href="#stopa"/></svg>
-</section>
-
-<section class="sek" id="zabiegi">
-  <div class="wrap">
-    <div class="glowa">
-      <h2>Z czym można do nas przyjść</h2>
-      <p>Pielęgnację łączymy z profilaktyką: najpierw ustalamy, skąd bierze się problem, potem dobieramy zabieg, preparaty i w razie potrzeby odciążenie stopy. Ceny podajemy z naszego cennika.</p>
-    </div>
-    <div class="tor" id="tor-z" data-tor data-grupa>
-      <article class="karta">
-        <button class="fot" type="button" data-lb="{{LB c-paznokcie}}">{{IMG c-paznokcie|(max-width:760px) 78vw, (max-width:1240px) 32vw, 24vw|Paznokieć z założoną klamrą ortonyksyjną}}</button>
-        <h3>Wrastające i wkręcające się paznokcie</h3>
-        <p>Korekta klamrą (ortonyksja), tamponada, kontrola i przestawianie klamry.</p>
-        <div class="cena">Założenie klamry <b>250-350 zł</b></div>
-      </article>
-      <article class="karta">
-        <button class="fot" type="button" data-lb="{{LB c-skora}}">{{IMG c-skora|(max-width:760px) 78vw, (max-width:1240px) 32vw, 24vw|Zabieg podologiczny na pięcie}}</button>
-        <h3>Odciski, modzele, pękające pięty</h3>
-        <p>Usuwanie zrogowaceń, opracowanie pięt z opatrunkiem, pielęgnacja zdrowych stóp.</p>
-        <div class="cena">Zabieg podologiczny <b>od 180 zł</b></div>
-      </article>
-      <article class="karta">
-        <button class="fot" type="button" data-lb="{{LB c-zmiany}}">{{IMG c-zmiany|(max-width:760px) 78vw, (max-width:1240px) 32vw, 24vw|Narzędzia podologiczne w pakietach sterylizacyjnych}}</button>
-        <h3>Brodawki, grzybica, zmiany paznokci</h3>
-        <p>Rozpoznanie zmiany, badanie mykologiczne lub bakteriologiczne, terapia i rekonstrukcja płytki.</p>
-        <div class="cena">Konsultacja dermatologiczna <b>150 zł</b></div>
-      </article>
-      <article class="karta">
-        <button class="fot" type="button" data-lb="{{LB c-senior}}">{{IMG c-senior|(max-width:760px) 78vw, (max-width:1240px) 32vw, 24vw|Zabieg podologiczny u pacjenta w gabinecie}}</button>
-        <h3>Stopa cukrzycowa i stopy seniora</h3>
-        <p>Roczna kontrola diabetyka, medyczny zabieg podologiczny, leczenie ran. Wizyty domowe w Tychach.</p>
-        <div class="cena">Kontrola dla diabetyka <b>150 zł</b></div>
-      </article>
-      <article class="karta">
-        <button class="fot" type="button" data-lb="{{LB c-badanie}}">{{IMG c-badanie|(max-width:760px) 78vw, (max-width:1240px) 32vw, 24vw|Stopy na podświetlonym podoskopie podczas badania}}</button>
-        <h3>Komputerowe badanie stóp</h3>
-        <p>Badanie statyczne i dynamiczne: podoskop, pedobarograf, planturograf, omówienie wyników.</p>
-        <div class="cena">Diagnostyka komputerowa <b>250 zł</b></div>
-      </article>
-      <article class="karta">
-        <button class="fot" type="button" data-lb="{{LB c-wkladki}}">{{IMG c-wkladki|(max-width:760px) 78vw, (max-width:1240px) 32vw, 24vw|Indywidualne wkładki ortopedyczne}}</button>
-        <h3>Wkładki ortopedyczne na miarę</h3>
-        <p>Frezowane, projektowane do konkretnej stopy, także wzmocnione dla diabetyków i przy RZS.</p>
-        <div class="cena">Wkładki dla dorosłych <b>350-450 zł</b></div>
-      </article>
-      <article class="karta">
-        <button class="fot" type="button" data-lb="{{LB c-dzieci}}">{{IMG c-dzieci|(max-width:760px) 78vw, (max-width:1240px) 32vw, 24vw|Badanie stóp dziecka}}</button>
-        <h3>Stopy dzieci</h3>
-        <p>Profilaktyczna wizyta, kinesiotaping i wkładka sensoryczna z możliwością przedłużenia.</p>
-        <div class="cena">Wizyta dla dziecka <b>150 zł</b></div>
-      </article>
-      <article class="karta">
-        <button class="fot" type="button" data-lb="{{LB c-dieta}}">{{IMG c-dieta|(max-width:760px) 78vw, (max-width:1240px) 32vw, 24vw|Konsultacja dietetyczna w gabinecie Plantaris}}</button>
-        <h3>Dietetyka kliniczna w cukrzycy</h3>
-        <p>Konsultacja, analiza badań, plan żywieniowy na 7, 14 dni lub 4 tygodnie.</p>
-        <div class="cena">Konsultacja <b>200 zł</b></div>
-      </article>
-    </div>
-    <div class="nav-tor" data-nav="tor-z">
-      <p class="uw">Pełny cennik będzie osobną zakładką.</p>
-      <button type="button" data-k="-1" aria-label="Poprzednie zabiegi"><svg aria-hidden="true"><use href="#i-l"/></svg></button>
-      <button type="button" data-k="1" aria-label="Następne zabiegi"><svg aria-hidden="true"><use href="#i-p"/></svg></button>
-    </div>
-  </div>
-</section>
-
-<section class="sek szara" id="badanie">
-  <div class="wrap krok">
-    <div class="krok-fot" data-grupa>
-      <button class="a" type="button" data-lb="{{LB podoskop}}">{{IMG podoskop|(max-width:1024px) 56vw, 30vw|Pacjentka stoi na podoskopie podczas badania stóp}}</button>
-      <button class="b" type="button" data-lb="{{LB mapa}}">{{IMG mapa|(max-width:1024px) 40vw, 20vw|Mapa nacisku stóp z pedobarografu na ekranie komputera}}</button>
-      <button class="c" type="button" data-lb="{{LB projekt}}">{{IMG projekt|(max-width:1024px) 40vw, 20vw|Projektowanie wkładki na odbitce stopy}}</button>
-      <svg class="krok-izo" viewBox="0 0 100 240" aria-hidden="true"><use href="#stopa"/></svg>
-    </div>
-    <div class="krok-txt">
-      <h2>Stopę badamy razem z całym narządem ruchu</h2>
-      <p>Ból pięty, kolana czy pleców często zaczyna się od tego, jak stopa przenosi ciężar ciała. Dlatego zanim zaprojektujemy wkładkę albo plan terapii, sprawdzamy stopy w spoczynku i w ruchu.</p>
-      <ul class="lista">
-        <li><span><b>Wywiad i badanie fizykalne</b> - od kiedy boli, w jakim obuwiu, przy jakiej aktywności.</span></li>
-        <li><span><b>Pedobarograf i podoskop</b> - mapa nacisku stopy w staniu i w chodzie.</span></li>
-        <li><span><b>Wkładka frezowana na miarę</b> - z kontrolą, a u dzieci z możliwością przedłużenia.</span></li>
-      </ul>
-      <div class="ceny">
-        <div><span>Diagnostyka komputerowa stóp</span><b>250 zł</b></div>
-        <div><span>Wkładki dla dorosłych (badanie osobno)</span><b>350-450 zł</b></div>
-        <div><span>Sensoryczna wkładka dla dzieci</span><b>450 zł</b></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sek" id="zespol">
-  <div class="wrap">
-    <div class="glowa">
-      <h2>Specjaliści, do których Pan lub Pani trafi</h2>
-      <p>Każdy prowadzi swoją część terapii i ma własny numer do zapisów, żeby od razu trafić do właściwej osoby.</p>
-    </div>
-    <div class="zespol">
-      <article class="osoba">
-        <div class="fot">{{IMG t-agnieszka|(max-width:760px) 92vw, (max-width:1240px) 44vw, 20vw|Mgr Agnieszka Nowotnik, specjalista podologii i dietetyki klinicznej}}</div>
-        <div>
-          <h3>Mgr Agnieszka Nowotnik</h3>
-          <p class="rola">Specjalista podologii i dietetyki klinicznej</p>
-          <p>Absolwentka Uniwersytetu Medycznego we Wrocławiu i Uniwersytetu Śląskiego, obecnie studiuje podiatrię. Szkoli z podologii i dietetyki klinicznej.</p>
-          <ul>
-            <li>wrastające paznokcie i ortonyksja</li>
-            <li>odciski, modzele, pękające pięty</li>
-            <li>brodawki i zmiany paznokci</li>
-            <li>stopa cukrzycowa, dietoterapia</li>
-          </ul>
-          <a class="tel" href="tel:+48503100341">503 100 341</a>
-        </div>
-      </article>
-      <article class="osoba">
-        <div class="fot">{{IMG t-lukasz|(max-width:760px) 92vw, (max-width:1240px) 44vw, 20vw|Mgr Łukasz Trzepieciński, ortopodolog i technik ortopeda}}</div>
-        <div>
-          <h3>Mgr Łukasz Trzepieciński</h3>
-          <p class="rola">Ortopodolog, technik ortopeda i diagnosta</p>
-          <p>Absolwent Wyższej Szkoły Medycznej we Wrocławiu. Zajmuje się diagnostyką postawy, biomechaniką chodu i wykonywaniem wkładek.</p>
-          <ul>
-            <li>komputerowe badanie stóp</li>
-            <li>wkładki ortopedyczne i korekcyjne</li>
-            <li>ortezy silikonowe</li>
-            <li>praca na powięziach</li>
-          </ul>
-          <a class="tel" href="tel:+48500138088">500 138 088</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="sek szara" id="wizyta">
-  <div class="wrap przed">
-    <figure class="fot-w" style="margin:0">
-      <div class="fot">{{IMG sterylne|(max-width:1024px) 92vw, 46vw|Narzędzia podologiczne wyjmowane z pakietów sterylizacyjnych}}</div>
-      <figcaption>Narzędzia czekają na pacjenta w zamkniętych pakietach sterylizacyjnych.</figcaption>
-    </figure>
-    <div>
-      <h2>Pierwsza wizyta u podologa</h2>
-      <ol>
-        <li><span>Umyj i osusz stopy, ale nie nakładaj kremów ani maści.</span></li>
-        <li><span>Zmyj lakier z paznokci i nie obcinaj ich sam przed wizytą.</span></li>
-        <li><span>Nie usuwaj odcisków ani zgrubiałego naskórka.</span></li>
-        <li><span>Zabierz obuwie, które nosisz na co dzień.</span></li>
-        <li><span>Weź wyniki badań z ostatnich 6 miesięcy i listę leków.</span></li>
-      </ol>
-      <p class="uw">Przed badaniem mykologicznym obowiązują osobne zalecenia - opiszemy je w strefie pacjenta.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sek" id="opinie">
-  <div class="wrap">
-    <div class="glowa">
-      <h2>Co mówią pacjenci</h2>
-      <p>Opinie z naszej obecnej strony, przyjeżdżają do nas nie tylko z Tychów.</p>
-    </div>
-    <div class="tor op" id="tor-o" data-tor>
-      <figure class="cyt"><blockquote>Profesjonalnie wykonana usługa, fachowo i zrozumiale opisuje stan stóp i zalecenia na przyszłość.</blockquote><figcaption><b>WaldiNie</b>, Jastrzębie-Zdrój</figcaption></figure>
-      <figure class="cyt"><blockquote>Byłam na wizycie z 2 córkami. Pełen profesjonalizm, dokładność, troska o pacjenta, ogromna wiedza.</blockquote><figcaption><b>Katarzyna</b>, Łaziska Górne</figcaption></figure>
-      <figure class="cyt"><blockquote>Bardzo rzetelny fachowiec, cieszę się, że trafiłam do takiego specjalisty.</blockquote><figcaption><b>Ada</b>, Tychy</figcaption></figure>
-      <figure class="cyt"><blockquote>Wszystko dokładnie tłumaczy, to już kolejna moja wizyta, a następna już niedługo.</blockquote><figcaption><b>Barbara</b>, Zabrze</figcaption></figure>
-      <figure class="cyt"><blockquote>Kompetencja, kontakt i zaangażowanie godne pochwały.</blockquote><figcaption><b>Monika</b>, Tychy</figcaption></figure>
-      <figure class="cyt"><blockquote>Jestem zadowolona, ulga po zabiegu.</blockquote><figcaption><b>Lidia</b>, Oświęcim</figcaption></figure>
-    </div>
-    <div class="nav-tor" data-nav="tor-o">
-      <button type="button" data-k="-1" aria-label="Poprzednie opinie"><svg aria-hidden="true"><use href="#i-l"/></svg></button>
-      <button type="button" data-k="1" aria-label="Następne opinie"><svg aria-hidden="true"><use href="#i-p"/></svg></button>
-    </div>
-  </div>
-</section>
-
-<section class="sek szara" id="kontakt">
-  <div class="wrap">
-    <div class="kontakt">
-      <div>
-        <h2>Umów wizytę</h2>
-        <div class="tele">
-          <a href="tel:+48503100341"><span>Podologia, leczenie ran, dietetyka</span><b>503 100 341</b></a>
-          <a href="tel:+48500138088"><span>Badanie stóp i wkładki</span><b>500 138 088</b></a>
-          <a href="mailto:kontakt@plantaris.pl"><span>E-mail</span><b>kontakt@plantaris.pl</b></a>
-        </div>
-        <div class="gabinety">
-          <div class="gabinet"><h3>Tychy</h3><p>Tyskie Centrum Podologii i Projektowania Wkładek Ortopodologicznych<br>ul. Zapolskiej 65B, Tychy</p></div>
-          <div class="gabinet"><h3>Wola</h3><p>Centrum Szkoleń, Rehabilitacji i Sprawnej Stopy<br>ul. Lipowa 7a (budynek Pekao), 43-225 Wola</p></div>
-        </div>
-        <p class="online">Można też zapisać się przez <a href="https://rejestracja.medfile.pl/register/catalog/?uuid=08df65a6-e39d-a68d-3ffb-6508af1e03f0" rel="noopener" target="_blank">rejestrację online</a>.</p>
-      </div>
-      <form id="form" novalidate>
-        <h3>Zapytanie o termin</h3>
-        <label>Imię<input name="imie" autocomplete="given-name" required></label>
-        <label>Telefon<input name="tel" type="tel" autocomplete="tel" inputmode="tel" required></label>
-        <label>Z czym Pan/Pani przychodzi
-          <select name="temat">
-            <option>Wrastający paznokieć</option><option>Odciski, modzele, pięty</option><option>Brodawki, grzybica</option><option>Stopa cukrzycowa</option><option>Badanie stóp i wkładki</option><option>Stopy dziecka</option><option>Dietetyka</option><option>Inne</option>
-          </select>
-        </label>
-        <label>Gabinet
-          <select name="gabinet"><option>Tychy</option><option>Wola</option><option>Obojętnie</option></select>
-        </label>
-        <label class="cale">Krótko o problemie (opcjonalnie)<textarea name="opis"></textarea></label>
-        <label class="zgoda cale"><input type="checkbox" required> Zgadzam się na kontakt w sprawie terminu wizyty.</label>
-        <button class="btn" type="submit">Wyślij zapytanie</button>
-        <p id="msg" hidden>To podgląd - formularz zacznie wysyłać zapytania na kontakt@plantaris.pl na docelowej stronie.</p>
-      </form>
-    </div>
-    <div class="mapa" id="mapa" data-src="https://maps.google.com/maps?q=Zapolskiej%2065B%2C%20Tychy&amp;z=15&amp;hl=pl&amp;output=embed" data-t="Mapa dojazdu: ul. Zapolskiej 65B, Tychy"></div>
-  </div>
-</section>
-</main>
+{{TRESC}}</main>
 
 <footer class="stopka">
   <div class="wrap">
     <div>
       <div class="marka"><span class="lisc" aria-hidden="true"></span>plantaris</div>
-      <p>Diagnostyka i terapia stóp. Podologia, wkładki ortopedyczne i dietetyka kliniczna w Tychach i w Woli.</p>
+      <p>Diagnostyka i terapia stóp. Podologia, wkładki ortopedyczne, dietetyka kliniczna i szkolenia dla podologów w Tychach i w Woli.</p>
     </div>
     <div>
       <h4>Gabinety</h4>
-      <p>ul. Zapolskiej 65B, Tychy</p>
+      <p>ul. Zapolskiej 65B, 43-100 Tychy</p>
       <p>ul. Lipowa 7a, 43-225 Wola</p>
     </div>
     <div>
@@ -548,13 +491,13 @@ form .btn{justify-self:start}
     </div>
     <div>
       <h4>Na stronie</h4>
-      <ul><li><a href="#zabiegi">Zabiegi i ceny</a></li><li><a href="#badanie">Badanie stóp</a></li><li><a href="#zespol">Specjaliści</a></li><li><a href="#wizyta">Pierwsza wizyta</a></li></ul>
+      <ul><li><a href="index.html#zabiegi">Zabiegi i ceny</a></li><li><a href="index.html#badanie">Badanie stóp</a></li><li><a href="szkolenia.html">Szkolenia</a></li><li><a href="sklep.html">Sklep: e-booki i kursy</a></li></ul>
     </div>
     <div class="dol"><span>© <span id="rok">2026</span> Plantaris</span>{{BADGE_LINK}}</div>
   </div>
 </footer>
 
-<div class="mob" id="mob"><a class="t" href="tel:+48503100341">Zadzwoń</a><a class="btn" href="#kontakt">Umów wizytę</a></div>
+<div class="mob" id="mob"><a class="t" href="tel:+48503100341">Zadzwoń</a><a class="btn" href="index.html#kontakt">Umów wizytę</a></div>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
   <button class="x" type="button" aria-label="Zamknij"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19" stroke="currentColor" stroke-width="2.4"/></svg></button>
@@ -564,5 +507,6 @@ form .btn{justify-self:start}
   <p></p>
 </div>
 <script src="app.js" defer></script>
+<script src="koszyk.js" defer></script>
 </body>
 </html>
